@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection des symptômes</title>
+    <style>/* Styles CSS personnalisés */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #72C9FB;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #72C9FB;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        label {
+            color: #333;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #72C9FB;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #72C9FB;
+        }
+        
+        </style>
+</head>
+<body>
+    <h1>Sélection des symptômes</h1>
+    <form action="/Prédiction Générale" method="post">
+        {% for group_num in range(7) %}
+        <h2>Groupe de symptômes {{ group_num + 1 }}</h2>
+        {% for symptom_index in range(group_num * 15, (group_num + 1) * 15) %}
+        {% if symptom_index < symptoms_count %}
+        <input type="checkbox" id="{{ symptoms[symptom_index] }}" name="symptoms[]" value="{{ symptoms[symptom_index] }}">
+        <label for="{{ symptoms[symptom_index] }}">{{ symptoms[symptom_index] }}</label><br>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        <input type="submit" value="Prédire">
+    </form>
+</body>
+</html>

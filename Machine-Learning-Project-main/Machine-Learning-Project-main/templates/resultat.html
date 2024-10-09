@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résultats de la prédiction</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="/static/script.js" defer></script>
+  <style>
+    /* Your CSS styles */
+    body {
+      padding: 0;
+      margin: 0;
+      color: white;
+      font-family: sans-serif;
+      background-image: url("/static/Al 3.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+    .navbar {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      padding: 2px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #71D1EA;
+      text-decoration: none;
+    }
+
+    .navbar .logo {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin: 0 25px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li a {
+      display: flex;
+      text-decoration: none;
+      padding: 12px;
+      margin: 5px 0;
+      border-radius: 10px;
+      align-items: center;
+      transition: 0.5s;
+      color: white;
+    }
+
+    ul li a:hover,
+    .active {
+      background-color: #ffffff55;
+    }
+
+    ul li a p {
+      margin-left: 10px;
+    }
+    /* Style pour l'image */
+    .content-image {
+      max-width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .content-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .separator {
+      border: none;
+      border-top: 5px solid #ADD8E6; /* تغيير سمك الخط وتحديد اللون (أزرق فاتح) */
+      margin: 20px 0; /* تعيين الهامش للخط */
+    }
+
+
+    .footer {
+      background-color: #72C9FB;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transition: bottom 0.3s ease; /* Ajout d'une transition pour une apparition douce */
+    }
+
+    .footer.hidden {
+      bottom: -100px; /* Déplacer le footer hors de la vue */
+    }
+
+    .bottom-menus {
+      background-color: #72C9FB;
+      color:  white;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu-item {
+      margin: 0 7px;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-icons a {
+      margin-bottom: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu-item h3 {
+      min-width: 100px;
+    }
+
+    input[type=text] {
+      width: 130px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+      width: 100%;
+    }
+
+    /* Aligning image to the right and text to the left */
+    ul li:first-child a {
+      flex-direction: row-reverse;
+    }
+  </style>
+</head>
+
+
+  <body>
+    <nav class="navbar">
+      <a href="#" class="logo">MEDIQUIZI</a>
+      <ul>
+        <li>
+          <a class="active" href="/">
+            <p>Accueil</p>
+          </a>
+        </li>
+        <li>
+          <a href="/predictions">
+            <i class="fas fa-chart-line"></i>
+            <p>Prédictions</p>
+          </a>
+        </li>
+        <li>
+          <a href="/sante">
+            <i class="fas fa-heart-pulse"></i>
+            <p>Santé</p>
+          </a>
+        </li>
+        <li>
+          <a href="/support">
+            <i class="fas fa-circle-question"></i>
+            <p>Support</p>
+          </a>
+        </li>
+        <li>
+          <a href="/a_propos">
+            <i class="fas fa-file"></i>
+            <p>À Propos</p>
+          </a>
+        </li>
+      </ul>
+      <input type="text" placeholder="Recherche...">
+    </nav>
+
+
+
+    <ul>
+        <li> <span class="{% if   prediction_rf == 1 %}malade{% else %}non-malade{% endif %}">{% if   prediction_rf == 1 %} <img src="/static/corona malade.jpg" alt="Your Image">{% else %} <img src="/static/pas malade.jpg" alt="Your Image">{% endif %}</span></li>
+    </ul>
+
+
+
+  <!-- Page content -->
+  <div id="content">
+    <!-- Additional content can be added here -->
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="bottom-menus">
+      <!-- Third Menu: Our Service, About, Contact -->
+      <div>
+        <h3>Notre Service</h3>
+        <h3>About</h3>
+        <a href="/contact"><h3>Contact</h3></a>
+      </div>
+
+      <!-- First Menu: Contact Information -->
+      <div class="menu-item">
+        <h3>Contact Information</h3>
+        <p>Email: contact@mediquzz.com</p>
+        <p>Phone: +1234567890</p>
+      </div>
+
+      <!-- Second Menu: Follow us on social media -->
+      <div class="menu-item">
+        <h3>Follow us on social media:</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/mediquzz" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="https://twitter.com/mediquzz" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="https://www.instagram.com/mediquzz" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.linkedin.com/company/mediquzz" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <p>&copy; 2024 MEDIQUIZI. Tous droits réservés.</p>
+  </div>
+
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var footer = document.querySelector('.footer');
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        footer.classList.remove('hidden');
+      } else {
+        footer.classList.add('hidden');
+      }
+    });
+  </script>
+
+  </body>
+
+  </html>

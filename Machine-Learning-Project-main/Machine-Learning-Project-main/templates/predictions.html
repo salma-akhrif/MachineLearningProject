@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIQUIZI - Santé</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/static/script.js" defer></script>
+    <style>
+        /* Vos styles CSS personnalisés */
+        
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url("/static/fdf4194c-4c99-4ac9-bed0-c8c341f567fa.jpg");
+            color: #2F748E;
+            font-family: sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #71D1EA;
+            padding: 2px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: dashed;
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 25px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li a {
+            display: flex;
+            text-decoration: none;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 10px;
+            align-items: center;
+            transition: 0.5s;
+            color: white;
+        }
+
+        ul li a:hover,
+        .active {
+            background-color: #ffffff55;
+        }
+
+        ul li a p {
+            margin-left: 10px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: white;
+        }
+
+        h1,
+        p {
+            text-align: justify;
+        }
+
+        /* Ajouter de l'espace entre chaque maladie */
+        header {
+            margin-bottom: 30px;
+            /* Choisissez une valeur qui vous convient */
+        }
+
+        /* Ajouter de l'espace entre le texte et les images */
+        main img,
+        main p {
+            margin-bottom: 50px;
+            /* Choisissez une valeur qui vous convient */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">MEDIQUIZI</a>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/cancer">Cancer</a></li>
+            <li><a href="/Prédiction Générale">Prédiction Générale</a></li>
+            <li><a href="/diabetes">Diabètes</a></li>
+            <li><a href="/corona">Corona</a></li>
+            <li><a href="/heart_disease">Maladies Cardiaques</a></li>
+        </ul>
+        <input type="text" placeholder="Recherche...">
+    </nav>
+    <div class="content">
+        <header>
+            <h1>Le cancer</h1>
+           
+        </header>
+        <p>La détection précoce des tumeurs cancéreuses revêt une importance capitale dans la lutte contre cette maladie. En identifiant les cancers à un stade précoce, les chances de succès des traitements augmentent considérablement, offrant aux patients de meilleures perspectives de guérison et de survie. De plus, une détection précoce permet souvent d'avoir recours à des thérapies moins agressives, réduisant ainsi les effets secondaires indésirables des traitements.</p>
+            <button type="button" onclick="window.location.href='/cancer'" style="background-color: transparent; border: none;">
+                <img src="/static/WhatsApp Image 2024-04-30 at 21.12.12.jpeg" alt="Description de l'image" width="313" height="46">
+            </button>
+        </main>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>Les maladies cardiaques</h1>
+            <img src="/static/Palpitaciones-cardiacas-2.gif" style="float: right; margin-right: 1px; width: 190px;">
+        </header>
+        <p>Les maladies cardiaques affectent le cœur et peuvent résulter de facteurs génétiques, modes de vie malsains et de conditions médicales sous-jacentes. Elles sont une cause de décès, mais une prise en charge précoce et des changements de mode de vie peuvent réduire les risques. Notre plateforme de prédiction offre des conseils personnalisés pour la prévention, la gestion et le traitement des maladies cardiaques.
+            de prédiction offre des conseils personnalisés pour la prévention,
+            la gestion et le traitement des maladies cardiaques.</p>
+            <button type="button" onclick="window.location.href='/heart_disease'" style="background-color: transparent; border: none;">
+                <img src="/static/WhatsApp Image 2024-04-30 at 21.12.12.jpeg" alt="Description de l'image" width="313" height="46">
+            </button>
+        </main>
+    </div>
+   
+    
+    <div class="content">
+        <header>
+            <h1>Le diabète</h1>
+            <img src="/static/5c608ae7dbd1b69d6b70a7244152e1ea.gif" style="float: right; margin-right: 40px; width: 180px;">
+           
+        </header>
+        <p>Le diabète est une maladie chronique qui se caractérise par un taux de glucose (sucre) élevé dans le sang. Il existe principalement deux types de diabète : le diabète de type 1, où le corps ne produit pas d'insuline, et le diabète de type 2, où le corps ne produit pas suffisamment d'insuline ou n'utilise pas correctement l'insuline qu'il produit. L'analyse des données médicales peut identifier les tendances qui pourraient indiquer un risque du diabète. Notre plateforme utilise des algorithmes avancés pour permettre une détection précoce et une intervention rapide, même en l'absence de symptômes.
+         L'analyse des données médicales peut identifier les tendances qui pourraient indiquer un risque
+         du diabète. Notre plateforme utilise des algorithmes avancés pour permettre 
+         une détection précoce et une intervention rapide, même en l'absence de symptômes.</p>
+         <img src="/static/1259-glucometer (1).gif" style="float:right; margin-right: 20px;width: 100px;">
+            <button type="button" onclick="window.location.href='/diabetes'" style="background-color: transparent; border: none;">
+                <img src="/static/WhatsApp Image 2024-04-30 at 21.12.12.jpeg" alt="Description de l'image" width="313" height="46">
+            </button>
+        </main>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1> COVID-19</h1>
+            <img src="/static/4rLyVYoSfDJ3.gif" style="float: right; margin-right: 30px; width: 170px;">
+        </header>
+        <p>La pandémie de COVID-19 a profondément transformé nos vies, bouleversant nos routines quotidiennes, nos interactions sociales et nos systèmes de santé à l'échelle mondiale. Depuis son émergence, des mesures de confinement, de distanciation sociale et de vaccination ont été mises en place pour contenir la propagation du virus. Des progrès ont été réalisés grâce aux efforts scientifiques et à la collaboration internationale, mais la pandémie continue de poser des défis, soulignant l'importance de la préparation et de la résilience face aux crises sanitaires mondiales.
+           Des progrès ont été réalisés grâce aux efforts scientifiques et à la collaboration internationale,
+           mais la pandémie continue de poser des défis, soulignant l'importance de la préparation
+           et de la résilience face aux crises sanitaires mondiales.</p>
+            <button type="button" onclick="window.location.href='/corona'" style="background-color: transparent; border: none;">
+                <img src="/static/WhatsApp Image 2024-04-30 at 21.12.12.jpeg" alt="Description de l'image" width="313" height="46">
+            </button>
+        </main>
+    </div>
+
+</body>
+
+</html>
